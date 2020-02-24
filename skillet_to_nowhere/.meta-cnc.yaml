@@ -1,0 +1,52 @@
+
+name: skillet_to_nowhere
+label: Skillet to Nowhere
+description: render var info to screen
+
+type: template
+labels:
+  collection:
+    - Nowhere
+
+variables:
+  - name: textual
+    description: text var
+    default: some text
+    type_hint: text
+
+  - name: password
+    description: hidden password
+    default: password
+    type_hint: password
+
+  - name: listual
+    description: list var
+    default: ['item1']
+    type_hint: list
+
+  - name: dropdoon
+    description: dropdown list
+    default: please
+    type_hint: dropdown
+    dd_list:
+      - key: please
+        value: please
+      - key: no thanks
+        value: no thanks
+
+  - name: if_please
+    description: show if please selected
+    default: here I am
+    type_hint: text
+    toggle_hint:
+      source: dropdoon
+      value: please
+
+  - name: ip_cidr
+    description: interface_ip
+    default: 192.168.1.1/24
+    type_hint: cidr
+
+snippets:
+  - name: nowhwere
+    file: nowhere.txt

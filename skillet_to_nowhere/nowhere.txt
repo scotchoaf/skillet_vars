@@ -1,0 +1,59 @@
+This is the output rendering of the skillet to nowhere
+
+
+ - name: textual
+    description: text var
+    default: some text
+    type_hint: text
+
+    value: {{ textual }}
+
+  - name: password
+    description: hidden password
+    default: password
+    type_hint: password
+
+    value: {{ password }}
+
+  - name: listual
+    description: list var
+    default: ['item1']
+    type_hint: list
+
+    value: {{ listual }}
+
+  - name: dropdoon
+    description: dropdown list
+    default: please
+    type_hint: dropdown
+    dd_list:
+      - key: please
+        value: please
+      - key: no thanks
+        value: no thanks
+
+    value: {{ dropdoon }}
+
+  - name: if_please
+    description: show if please selected
+    default: here I am
+    type_hint: text
+    toggle_hint:
+      source: dropdoon
+      value: please
+
+    value: {{ if_please }}
+
+  - name: ip_cidr
+    description: interface_ip
+    default: 192.168.1.1/24
+    type_hint: cidr
+
+    value: {{ ip_cidr }}
+
+    Some other variables I forgot to add into my var section:
+
+    missing var1: {{ var1 }}
+
+    missing var2: {{ var2 }}
+
